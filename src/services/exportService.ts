@@ -11,7 +11,7 @@ const api = axios.create({
 });
 
 interface ExportData {
-  keyword: string;
+  keyword?: string;
   content: string;
   projectName?: string;
 }

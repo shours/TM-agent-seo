@@ -40,7 +40,7 @@ const AnalysisResult = ({
     return lang === 'fr' ? 'Français' : 'English';
   };
 
-  const metadata = `Mot clef: ${keyword || ''} | Langue: ${getLanguageDisplay(language)} | ID serpmantics: ${serpamicsId || ''} | Projet: ${projectName || ''}`;
+  const metadata = `Mot clef: ${keyword || ''} | Langue: ${getLanguageDisplay(language)}${serpamicsId ? ` | ID serpmantics: ${serpamicsId}` : ''}${projectName ? ` | Projet: ${projectName}` : ''}`;
 
   return (
     <div className="space-y-8">
@@ -50,14 +50,14 @@ const AnalysisResult = ({
         </div>
         
         {analysis && (
-          <div className="mb-8">
+          <>
             <h3 className="text-lg font-medium text-gray-900 mb-4">Analyse de l'intention</h3>
             <div className="prose prose-sm max-w-none">
               <pre className="whitespace-pre-wrap font-sans text-base text-gray-900 leading-relaxed">
                 {analysis}
               </pre>
             </div>
-          </div>
+          </>
         )}
       </div>
 
